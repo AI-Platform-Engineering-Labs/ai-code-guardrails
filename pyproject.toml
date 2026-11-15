@@ -1,0 +1,18 @@
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+src = ["app"]
+
+[tool.ruff.lint]
+# E/F: errors, I: imports, B: bugbear, S: bandit security rules
+select = ["E", "F", "I", "B", "S"]
+
+[tool.ruff.lint.per-file-ignores]
+"app/tests/*" = ["S101"]
+
+[tool.pytest.ini_options]
+testpaths = ["app/tests"]
+addopts = "--cov=app --cov-report=term-missing --cov-fail-under=90"
+
+[tool.coverage.run]
+omit = ["app/tests/*"]
