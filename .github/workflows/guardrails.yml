@@ -55,7 +55,7 @@ jobs:
         with: { python-version: "3.12" }
       - name: Dependency review (new vulnerable packages in this PR)
         if: github.event_name == 'pull_request'
-        uses: actions/dependency-review-action@v4
+        uses: actions/dependency-review-action@v5
         with:
           fail-on-severity: moderate
       - name: pip-audit (known CVEs in pinned packages)
