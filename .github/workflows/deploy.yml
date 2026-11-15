@@ -21,7 +21,7 @@ jobs:
       name: production
       url: https://${{ vars.AZURE_WEBAPP_NAME }}.azurewebsites.net
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # KodeKloud's sandbox gives a service principal with a client secret and
       # does not allow federated credentials, so this uses a secret, not OIDC.
